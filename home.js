@@ -25,3 +25,35 @@ document
     document.getElementById("available-balance").innerText =
       totalAvailableBalance;
   });
+
+document.getElementById("wallet-btn").addEventListener("click", function () {
+  document.getElementById("cashout-section").style.display = "none";
+  document.getElementById("add-money-section").style.display = "block";
+});
+
+document.getElementById("cashout-btn").addEventListener("click", function () {
+  document.getElementById("add-money-section").style.display = "none";
+  document.getElementById("cashout-section").style.display = "block";
+});
+document
+  .getElementById("cashout-submit-btn")
+  .addEventListener("click", function (e) {
+    e.preventDefault;
+
+    let cashoutAcountNumber = parseInt(
+      document.getElementById("cashout-acount-number").value
+    );
+    const cashoutAmountNumber = parseInt(
+      document.getElementById("cashout-amount-number").value
+    );
+    const habijabi = document.getElementById("cashout-pin-number").value;
+    console.log(habijabi);
+    const availableBalance = parseInt(
+      document.getElementById("available-balance").innerText
+    );
+
+    const cashoutTotalAvailableBalane = availableBalance - cashoutAmountNumber;
+
+    document.getElementById("available-balance").innerText =
+      cashoutTotalAvailableBalane;
+  });
