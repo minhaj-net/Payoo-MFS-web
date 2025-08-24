@@ -1,7 +1,7 @@
 // Log in button functionality
 document.getElementById("loginBtn").addEventListener("click", function (e) {
   e.preventDefault();
-  let mobailNumber = 12345678901;
+  let mobailNumber = 1870567842;
   let pinNumber = 1234;
   const mobailNumberValue = document.getElementById("mobail-number").value;
   const mobailNumberValueConvert = parseInt(mobailNumberValue);
