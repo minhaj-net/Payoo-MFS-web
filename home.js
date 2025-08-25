@@ -110,6 +110,19 @@ function handlertoggle(id) {
   document.getElementById(id).style.display = "block";
 }
 
+function handleButtonToggle(id) {
+  const fromsBtn = document.getElementsByClassName("froms");
+
+  for (const btn of fromsBtn) {
+    btn.classList.remove("border-[#0874f2]", "bg-[#0874f20d]");
+    btn.classList.add("border-gray-200");
+  }
+  document
+    .getElementById(id)
+    .classList.add("border-[#0874f2]", "bg-[#0874f20d]");
+  document.getElementById(id).classList.remove("border-gray-200");
+}
+
 // all toggle here
 // 1.add money toogle
 document.getElementById("wallet-btn").addEventListener("click", function (e) {
@@ -153,6 +166,7 @@ document.getElementById("transfer-btn").addEventListener("click", function (e) {
   // }
   // document.getElementById("transfer-section").style.display = "block";
   handlertoggle("transfer-section");
+  handleButtonToggle("transfer-btn");
 });
 // 4.get bonus toggle here
 document.getElementById("bonus-btn").addEventListener("click", function (e) {
@@ -220,7 +234,7 @@ document.getElementById("bonus-btn").addEventListener("click", function (e) {
     .classList.add("border-[#0874f2]", "bg-[#0874f20d]");
   document.getElementById("bonus-btn").classList.remove("border-gray-200");
 });
-//3.pay bill   button selected background and border
+//4.pay bill   button selected background and border
 document.getElementById("pay-bill-btn").addEventListener("click", function (e) {
   e.preventDefault;
   const fromsBtn = document.getElementsByClassName("froms");
@@ -234,3 +248,12 @@ document.getElementById("pay-bill-btn").addEventListener("click", function (e) {
     .classList.add("border-[#0874f2]", "bg-[#0874f20d]");
   document.getElementById("pay-bill-btn").classList.remove("border-gray-200");
 });
+
+// transaction toggle here
+document
+  .getElementById("transaction-btn")
+  .addEventListener("click", function (e) {
+    e.preventDefault;
+    handlertoggle("transaction-section");
+    handleButtonToggle("transaction-btn");
+  });
